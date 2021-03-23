@@ -93,7 +93,7 @@ function clean_challenge {
         curl -X POST "$REGRU_url/remove_record" --data "username=$REGRU_user&password=$REGRU_pass&output_content_type=plain&show_input_params=0&domain_name=$DOMAIN1&input_format=json&input_data={\"domains\":[{\"dname\":\"$DOMAIN1\"}],\"subdomain\":\"$SUBNAME\",\"record_type\":\"$RECTYPE\"}" > /dev/null 2>&1
       done
 
-    printf "server %s\nupdate delete %s. %d in TXT \"%s\"\nsend\n" "${NS_server}" "${NS_zone}" "${TTL}" | $NSUPDATE
+    printf "server %s\nupdate delete %s %d TXT\nsend\n" "${NS_server}" "${NS_zone}" "${TTL}" | $NSUPDATE
 }
 
 function invalid_challenge() {
