@@ -20,7 +20,7 @@ function deploy_challenge {
     ### check for domain name correct and exist
 
     if (( $D_LEN < 2 )); then echo "Wrong domain. Exit"; exit; fi
-    if (( $D_LEN > 2 ))
+    if (( $D_LEN >= 2 ))
     then
       DOM=()
       for ((i=1; i <= "$D_LEN"; i++))
